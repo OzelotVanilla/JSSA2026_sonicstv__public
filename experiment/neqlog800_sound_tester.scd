@@ -73,3 +73,23 @@ Routine({
     };
 }).play;
 )
+
+// 5eqlog800
+(
+var f0 = 1500;
+var f1 = 1633.8740473694156;
+var f2 = 1779.696268444877;
+var f3 = 1938.533030141518;
+var f4 = 2111.545871944413;
+var f5 = 2300.0;
+
+Routine({
+    [
+        f0, f1, f2, f3, f4, f5
+    ].do { |freq|
+        var s = { SinOsc.ar(freq) * 0.2 }.play;
+        0.5.wait;
+        s.free;
+    };
+}).play;
+)
