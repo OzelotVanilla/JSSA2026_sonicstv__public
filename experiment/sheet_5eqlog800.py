@@ -214,37 +214,58 @@ if bake_result__nudgeAll is not None:
     )
 
 
-bake_result__biasAll = bake(
-    "./experiment/tunnel.png",
+bake_result_slide__nudgeAll = bake(
+    "./experiment/deepmaze_slide.png",
     sheet,
-    line_process_algo=partial(biasAll, strength=0.75)
+    line_process_algo=partial(nudgeAll, strength=0.50)
 )
 
-if bake_result__biasAll is not None:
-    bake_result__biasAll.save(
-        "./experiment/output/sheet__5eqlog800_biasAll.png",
+if bake_result_slide__nudgeAll is not None:
+    bake_result_slide__nudgeAll.save(
+        "./experiment/output/sheet_slide__5eqlog800_nudgeAll_50.png",
         should_overwrite_if_existed=True
     )
     saveSSTVAudio(
-        bake_result__biasAll,
-        "./experiment/output/sheet__5eqlog800_biasAll.wav",
+        bake_result_slide__nudgeAll,
+        "./experiment/output/sheet_slide__5eqlog800_nudgeAll_50.wav",
         should_overwrite_if_existed=True
     )
 
 
-bake_result__coverRandomly = bake(
-    "./experiment/tunnel.png",
-    sheet,
-    line_process_algo=partial(coverRandomly, strength=0.25)
-)
+# Commented because not generating work that discussed in paper.
+# However, it is good to generate to see the comparison.
 
-if bake_result__coverRandomly is not None:
-    bake_result__coverRandomly.save(
-        "./experiment/output/sheet__5eqlog800_coverRandomly.png",
-        should_overwrite_if_existed=True
-    )
-    saveSSTVAudio(
-        bake_result__coverRandomly,
-        "./experiment/output/sheet__5eqlog800_coverRandomly.wav",
-        should_overwrite_if_existed=True
-    )
+# bake_result__biasAll = bake(
+#     "./experiment/tunnel.png",
+#     sheet,
+#     line_process_algo=partial(biasAll, strength=0.75)
+# )
+
+# if bake_result__biasAll is not None:
+#     bake_result__biasAll.save(
+#         "./experiment/output/sheet__5eqlog800_biasAll.png",
+#         should_overwrite_if_existed=True
+#     )
+#     saveSSTVAudio(
+#         bake_result__biasAll,
+#         "./experiment/output/sheet__5eqlog800_biasAll.wav",
+#         should_overwrite_if_existed=True
+#     )
+
+
+# bake_result__coverRandomly = bake(
+#     "./experiment/tunnel.png",
+#     sheet,
+#     line_process_algo=partial(coverRandomly, strength=0.25)
+# )
+
+# if bake_result__coverRandomly is not None:
+#     bake_result__coverRandomly.save(
+#         "./experiment/output/sheet__5eqlog800_coverRandomly.png",
+#         should_overwrite_if_existed=True
+#     )
+#     saveSSTVAudio(
+#         bake_result__coverRandomly,
+#         "./experiment/output/sheet__5eqlog800_coverRandomly.wav",
+#         should_overwrite_if_existed=True
+#     )
