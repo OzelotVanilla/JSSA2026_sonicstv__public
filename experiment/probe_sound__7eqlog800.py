@@ -1,6 +1,6 @@
 from sonicstv import (
     bake, Sheet, SingleFreqNote as s,
-    nudgeAll, biasAll, coverRandomly
+    nudgeAll, biasAll, coverRandomly, coverAll, nudgeAllAdaptively
 )
 from functools import partial
 
@@ -113,5 +113,41 @@ if bake_result__coverRandomly is not None:
     saveSSTVAudio(
         bake_result__coverRandomly,
         "./experiment/output/probe__7eqlog800_coverRandomly.wav",
+        should_overwrite_if_existed=True
+    )
+
+
+bake_result__coverAll = bake(
+    "./experiment/tunnel.png",
+    sheet,
+    line_process_algo=coverAll
+)
+
+if bake_result__coverAll is not None:
+    bake_result__coverAll.save(
+        "./experiment/output/probe__7eqlog800_coverAll.png",
+        should_overwrite_if_existed=True
+    )
+    saveSSTVAudio(
+        bake_result__coverAll,
+        "./experiment/output/probe__7eqlog800_coverAll.wav",
+        should_overwrite_if_existed=True
+    )
+
+
+bake_result__nudgeAllAdaptively = bake(
+    "./experiment/tunnel.png",
+    sheet,
+    line_process_algo=nudgeAllAdaptively
+)
+
+if bake_result__nudgeAllAdaptively is not None:
+    bake_result__nudgeAllAdaptively.save(
+        "./experiment/output/probe__7eqlog800_nudgeAllAdaptively.png",
+        should_overwrite_if_existed=True
+    )
+    saveSSTVAudio(
+        bake_result__nudgeAllAdaptively,
+        "./experiment/output/probe__7eqlog800_nudgeAllAdaptively.wav",
         should_overwrite_if_existed=True
     )
