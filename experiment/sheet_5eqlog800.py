@@ -93,7 +93,7 @@ sheet = Sheet([
     # 87,88,89,90         # 91,92,93,94
     r(duration_frame=12), r(duration_frame=12),
 
-    # line 95 ~ 108 (each line is 3 frame)
+    # line 95 ~ 118 (each line is 3 frame)
     # Motif A modified (A'). Showing a feeling of chaos and trembling.
     *[s(f, duration_frame=3)
       for f in [
