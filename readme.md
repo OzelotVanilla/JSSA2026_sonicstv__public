@@ -13,3 +13,9 @@ Step to Reproduce
 2. Navigate to this repository's `experiment` folder.
 3. `probe_sound__7eqlog800.py` will generate probed image and sound (検証用の対数的等間隔音列),
     while `sheet_5eqlog800.py` generate image and sound with designed sound contour (旋律輪郭).
+
+
+Links
+--------
+
+* Slides used for conference presentation: https://docs.google.com/presentation/d/1vBgux58KPr1uZehWmIOXwSXsloFuTdWp5KDINrPQX0g/edit?usp=sharing
